@@ -1,0 +1,141 @@
+
+
+.upload-area {
+  position: relative;
+  border: 2px dashed var(--border-hover);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-base),
+    background var(--transition-base),
+    transform var(--transition-fast),
+    box-shadow var(--transition-base);
+  background: var(--bg-input);
+  text-align: center;
+  outline: none;
+}
+
+.upload-area:hover,
+.upload-area:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  box-shadow: var(--shadow-glow);
+}
+
+.upload-area.drag-over {
+  border-color: var(--accent-light);
+  background: var(--accent-subtle);
+  transform: scale(1.01);
+  box-shadow: var(--shadow-glow), inset 0 0 40px rgba(108, 99, 255, 0.06);
+}
+
+.upload-area input[type='file'] {
+  display: none;
+}
+
+
+.upload-area__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.upload-area__circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-subtle);
+  color: var(--accent-light);
+  transition: background var(--transition-base), transform var(--transition-base);
+}
+
+.upload-area:hover .upload-area__circle {
+  background: rgba(108, 99, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.upload-area__label {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.upload-area__browse {
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+.upload-area__hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+
+.upload-area__preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: fadeInUp 0.3s ease;
+}
+
+.upload-area__thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-hover);
+}
+
+.upload-area__icon {
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.upload-area__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.upload-area__filename {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.upload-area__size {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.upload-area__change {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.upload-area:hover .upload-area__change {
+  opacity: 1;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

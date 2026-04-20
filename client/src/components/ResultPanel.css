@@ -1,0 +1,219 @@
+
+
+.panel--result {
+  justify-content: flex-start;
+}
+
+
+.rp__empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.rp__empty-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-input);
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.rp__empty-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.rp__empty-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  max-width: 220px;
+  line-height: 1.4;
+}
+
+
+.rp__status--loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--accent-subtle);
+  color: var(--accent-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.rp__spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(108, 99, 255, 0.25);
+  border-top-color: var(--accent-light);
+  border-radius: 50%;
+  animation: rpSpin 0.7s linear infinite;
+}
+
+@keyframes rpSpin {
+  to { transform: rotate(360deg); }
+}
+
+
+.rp__result {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: rpFadeIn 0.35s ease;
+}
+
+.rp__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  transition: border-color var(--transition-base);
+}
+
+.rp__row:hover {
+  border-color: var(--border-hover);
+}
+
+
+.rp__row--status {
+  padding: 14px 16px;
+}
+
+.rp__row--success {
+  background: var(--success-bg);
+  border-color: var(--success-border);
+}
+
+.rp__row--error {
+  background: var(--error-bg);
+  border-color: var(--error-border);
+}
+
+.rp__row--warning {
+  background: var(--warning-bg);
+  border-color: var(--warning-border);
+}
+
+
+.rp__row-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rp__row--success .rp__row-icon {
+  background: rgba(52, 211, 153, 0.15);
+  color: var(--success);
+}
+
+.rp__row--error .rp__row-icon {
+  background: rgba(248, 113, 113, 0.15);
+  color: var(--error);
+}
+
+.rp__row--warning .rp__row-icon {
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--warning);
+}
+
+.rp__row-icon--neutral {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+}
+
+
+.rp__row-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.rp__label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.rp__value {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.rp__row--success .rp__value { color: var(--success); }
+.rp__row--error .rp__value { color: var(--error); }
+.rp__row--warning .rp__value { color: var(--warning); }
+
+.rp__value--msg {
+  font-weight: 500;
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.rp__hash {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  word-break: break-all;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+
+.rp__clear {
+  margin-top: 2px;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-family);
+  font-size: 0.76rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.rp__clear:hover {
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+@keyframes rpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

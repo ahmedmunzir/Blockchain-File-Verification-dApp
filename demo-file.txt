@@ -1,0 +1,11 @@
+This is a demo file for testing the blockchain file verification system.
+
+Content: Hello Blockchain! This file will be used to test the upload and verification functionality.
+
+Features tested:
+1. File hash generation
+2. Smart contract interaction
+3. Blockchain storage
+4. File verification
+
+Timestamp: September 22, 2025
